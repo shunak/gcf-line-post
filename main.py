@@ -19,9 +19,8 @@ def main(request):
     channel_secret = os.environ.get('LINE_CHANNEL_SECRET')
     channel_access_token = os.environ.get('LINE_CHANNEL_ACCESS_TOKEN')
     news_json_url = os.environ.get('NEWS_JSON_URL')
-
     line_bot_api = LineBotApi(channel_access_token)
-           
+
     url = requests.get(news_json_url)
     json_text = url.text
     contents = json.loads(json_text)
