@@ -29,6 +29,8 @@ def main(request):
     for (i,content) in enumerate(contents):
         chat_text += content["topic"] + "\n" + content["url"] + "\n"
         articles = TextSendMessage(text=chat_text)
+        if i==4:
+            break
 
     line_bot_api.broadcast(articles)
 
